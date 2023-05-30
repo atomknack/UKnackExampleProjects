@@ -87,7 +87,9 @@ public class PlayeInputToMovement : MonoBehaviour, IPlayeInputToMovement
     private void Update()
     {
 
-        _follow.transform.rotation *= Quaternion.AngleAxis(_look.y * rotationPower, Vector3.right);
+        _follow.rotation *= Quaternion.AngleAxis(_look.x * rotationPower, Vector3.up);
+        _follow.rotation *= Quaternion.AngleAxis(_look.y * rotationPower, Vector3.right);
+
 
         var angles = _follow.transform.localEulerAngles;
         angles.z = 0;
