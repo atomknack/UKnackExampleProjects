@@ -123,6 +123,51 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &56933988
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 56933989}
+  - component: {fileID: 56933990}
+  m_Layer: 0
+  m_Name: AimConverter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &56933989
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56933988}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 438068644}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &56933990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56933988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c118d96113cac84091626d7664aaa60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _iPublisher: {fileID: 11400000, guid: 04acfe4fbf9992443992c9bf5586e62b, type: 2}
 --- !u!1 &99398593
 GameObject:
   m_ObjectHideFlags: 0
@@ -335,6 +380,51 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &229724468
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 229724469}
+  - component: {fileID: 229724470}
+  m_Layer: 0
+  m_Name: FireConverter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &229724469
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229724468}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 438068644}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &229724470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229724468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c118d96113cac84091626d7664aaa60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _iPublisher: {fileID: 11400000, guid: 44111d98591aad74a911b05020049404, type: 2}
 --- !u!1 &250981461
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,7 +471,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.1420233, y: 1}
+    m_SensorSize: {x: 1.9873646, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -482,6 +572,40 @@ MonoBehaviour:
         m_CallState: 1
     m_ActionId: 420a7932-0b21-49c9-aca2-89b6e952d7ef
     m_ActionName: Gameplay/Look[/Mouse/delta,/XInputControllerWindows/rightStick]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 56933990}
+        m_TargetAssemblyTypeName: UKnack.Concrete.Events.CallbackContextValueToBool,
+          UserAssemblyFriendOfUKnackConcrete
+        m_MethodName: PublishAsBool
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+    m_ActionId: 42ea6dd5-cd00-4a48-8e16-61e3f3e62c4e
+    m_ActionName: Gameplay/Aim[/Mouse/rightButton,/XInputControllerWindows/leftShoulder]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 229724470}
+        m_TargetAssemblyTypeName: UKnack.Concrete.Events.CallbackContextValueToBool,
+          UserAssemblyFriendOfUKnackConcrete
+        m_MethodName: PublishAsBool
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+    m_ActionId: bd481418-6089-414d-a518-ea8afaa0ec53
+    m_ActionName: Gameplay/Fire[/Mouse/leftButton,/XInputControllerWindows/rightShoulder]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
@@ -501,6 +625,8 @@ Transform:
   m_Children:
   - {fileID: 2118467753}
   - {fileID: 1172868151}
+  - {fileID: 56933989}
+  - {fileID: 229724469}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -666,6 +792,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8374296686503480066, guid: cfffd5a018383ec49bd2e1aeec705f47, type: 3}
+      propertyPath: _aimInput
+      value: 
+      objectReference: {fileID: 11400000, guid: aefa8c322f4d72848a9a4b94749871f3, type: 2}
+    - target: {fileID: 8374296686503480066, guid: cfffd5a018383ec49bd2e1aeec705f47, type: 3}
+      propertyPath: _fireInput
+      value: 
+      objectReference: {fileID: 11400000, guid: 1ed842a5c80654040a4a2799ed6de59f, type: 2}
     - target: {fileID: 8374296686503480066, guid: cfffd5a018383ec49bd2e1aeec705f47, type: 3}
       propertyPath: _lookInput
       value: 

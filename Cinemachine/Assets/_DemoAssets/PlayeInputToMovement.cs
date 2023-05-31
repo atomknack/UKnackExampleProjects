@@ -1,3 +1,6 @@
+// Initial version of this example based on Unity example from https://www.youtube.com/watch?v=537B1kJp9YQ
+// All my code changes are licensed under MIT
+
 using System.Collections;
 using System.Collections.Generic;
 using UKnack.Attributes;
@@ -41,7 +44,8 @@ public class PlayeInputToMovement : MonoBehaviour, IPlayeInputToMovement
     private SOEvent<Vector2> _lookInput;
 
     [SerializeField]
-
+    [ValidReference]
+    private SOEvent<bool> _aimInput;
 
     private Vector2 _move;
     private Vector2 _look;
@@ -53,12 +57,14 @@ public class PlayeInputToMovement : MonoBehaviour, IPlayeInputToMovement
 
         _horizontalMoveInput.Subscribe(OnMove);
         _lookInput.Subscribe(OnLook);
+        _aimInput.Subscribe(OnAim);
     }
 
     private void OnDisable()
     {
         _horizontalMoveInput.UnsubscribeNullSafe(OnMove);
         _lookInput.UnsubscribeNullSafe(OnLook);
+        _aimInput.UnsubscribeNullSafe(OnAim);
     }
 
     public void OnMove(Vector2 value)
@@ -79,11 +85,6 @@ public class PlayeInputToMovement : MonoBehaviour, IPlayeInputToMovement
         //Debug.Log($"Aim value before: {before}, and now {aimValue}");
     }
 
-    public void OnFire(bool value)
-    {
-        IsFirePressed = value;
-    }
-
     private void Update()
     {
 
@@ -91,23 +92,11 @@ public class PlayeInputToMovement : MonoBehaviour, IPlayeInputToMovement
         _follow.rotation *= Quaternion.AngleAxis(_look.y * rotationPower, Vector3.right);
 
 
-        var angles = _follow.transform.localEulerAngles;
+        var angles = _follow.localEulerAngles;
         angles.z = 0;
+        angles.x = ClampUpDown(angles.x);
 
-        var angle = _follow.transform.localEulerAngles.x;
-
-        //Clamp the Up/Down rotation
-        if (angle > 180 && angle < 340)
-        {
-            angles.x = 340;
-        }
-        else if (angle < 180 && angle > 40)
-        {
-            angles.x = 40;
-        }
-
-
-        _follow.transform.localEulerAngles = angles;
+        _follow.localEulerAngles = angles;
 
 
         NextRotation = Quaternion.Lerp(_follow.transform.rotation, NextRotation, Time.deltaTime * rotationLerp);
@@ -121,7 +110,7 @@ public class PlayeInputToMovement : MonoBehaviour, IPlayeInputToMovement
                 //Set the player rotation based on the look transform
                 transform.rotation = Quaternion.Euler(0, _follow.transform.rotation.eulerAngles.y, 0);
                 //reset the y rotation of the look transform
-                _follow.transform.localEulerAngles = new Vector3(angles.x, 0, 0);
+                _follow.localEulerAngles = new Vector3(angles.x, 0, 0);
             }
 
             return;
@@ -132,9 +121,20 @@ public class PlayeInputToMovement : MonoBehaviour, IPlayeInputToMovement
 
 
         //Set the player rotation based on the look transform
-        transform.rotation = Quaternion.Euler(0, _follow.transform.rotation.eulerAngles.y, 0);
+        transform.rotation = Quaternion.Euler(0, _follow.rotation.eulerAngles.y, 0);
         //reset the y rotation of the look transform
-        _follow.transform.localEulerAngles = new Vector3(angles.x, 0, 0);
+        _follow.localEulerAngles = new Vector3(angles.x, 0, 0);
+
+        float ClampUpDown(float angle)
+        {
+            if (angle < 180 && angle > 70)
+                return 70;
+
+            if (angle > 180 && angle < 345)
+                return 345;
+
+            return angle;
+        }
     }
 
 
