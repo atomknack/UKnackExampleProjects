@@ -558,7 +558,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1172868152}
-        m_TargetAssemblyTypeName: UKnack.Concrete.Events.CallbackContextDirectToVector2,
+        m_TargetAssemblyTypeName: UKnack.Concrete.Events.CallbackContextWithDeviceScaleToVector2,
           UserAssemblyFriendOfUKnackConcrete
         m_MethodName: PublishAsVector2
         m_Mode: 0
@@ -859,9 +859,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1172868150}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40f7f4a070b918e4f929f2c383bc675c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5727d49c9ab664a4f85672fcbb7b74c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointerScale: {x: 1, y: 1}
+  gamepadScale: {x: 1, y: 1}
   _iPublisher: {fileID: 11400000, guid: d06e8862b522a134c8dcc9cf9ad559bf, type: 2}
 --- !u!1 &1312058777
 GameObject:
