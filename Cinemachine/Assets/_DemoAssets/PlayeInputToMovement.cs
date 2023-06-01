@@ -52,6 +52,10 @@ public class PlayeInputToMovement : MonoBehaviour, IPlayeInputToMovement
 
     private void OnEnable()
     {
+        //Debug.Log($"OnEnable {transform.position}");
+        NextPosition = transform.position;
+        NextRotation = transform.rotation;
+
         if (_camera == null)
             _camera = Camera.main;
 
@@ -74,7 +78,7 @@ public class PlayeInputToMovement : MonoBehaviour, IPlayeInputToMovement
 
     public void OnLook(Vector2 value)
     {
-        Debug.Log(value);
+        //Debug.Log(value);
         _look = value;
     }
 
@@ -87,6 +91,7 @@ public class PlayeInputToMovement : MonoBehaviour, IPlayeInputToMovement
 
     private void Update()
     {
+        //Debug.Log($"Update {transform.position}");
 
         _follow.rotation *= Quaternion.AngleAxis(_look.x * rotationPower, Vector3.up);
         _follow.rotation *= Quaternion.AngleAxis(_look.y * rotationPower, Vector3.right);
@@ -116,7 +121,9 @@ public class PlayeInputToMovement : MonoBehaviour, IPlayeInputToMovement
             return;
         }
         float moveSpeed = _speed / 100f;
-        Vector3 position = (transform.forward * _move.y * moveSpeed) + (transform.right * _move.x * moveSpeed);
+        Vector3 position = (_camera.transform.forward * _move.y * moveSpeed) + (_camera.transform.right * _move.x * moveSpeed);
+        position.y = 0;
+        //Debug.Log($"{transform.position} {position}");
         NextPosition = transform.position + position;
 
 

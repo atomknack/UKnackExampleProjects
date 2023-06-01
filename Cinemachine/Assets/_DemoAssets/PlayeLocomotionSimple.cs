@@ -5,7 +5,7 @@ using UnityEngine;
 
 
 [RequireComponent(typeof(IPlayeInputToMovement))]
-public class PlayerLocomotionSimple : MonoBehaviour
+public class PlayeLocomotionSimple : MonoBehaviour
 {
     IPlayeInputToMovement _movement;
 
