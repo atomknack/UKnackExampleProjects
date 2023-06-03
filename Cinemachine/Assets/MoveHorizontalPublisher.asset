@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61675bf8ebfecbe4f884e62e67b0af22, type: 3}
+  m_Script: {fileID: 11500000, guid: cd505f77b4ad62b4089001b25d094160, type: 3}
   m_Name: MoveHorizontalPublisher
   m_EditorClassIdentifier: 
   where: {fileID: 11400000, guid: 9d730fcb437ddcd4ab54d121bf66d326, type: 2}
