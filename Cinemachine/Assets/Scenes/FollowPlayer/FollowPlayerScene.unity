@@ -167,6 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c118d96113cac84091626d7664aaa60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _ignoreStarted: 0
   _iPublisher: {fileID: 11400000, guid: 04acfe4fbf9992443992c9bf5586e62b, type: 2}
 --- !u!1 &229724468
 GameObject:
@@ -212,6 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c118d96113cac84091626d7664aaa60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _ignoreStarted: 1
   _iPublisher: {fileID: 11400000, guid: 44111d98591aad74a911b05020049404, type: 2}
 --- !u!1 &250981461
 GameObject:
@@ -543,8 +545,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5727d49c9ab664a4f85672fcbb7b74c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointerScale: {x: 1, y: 1}
-  gamepadScale: {x: 1, y: 1}
+  pointerScale: {x: 0.2, y: 0.1}
+  gamepadScale: {x: 0.2, y: 0.1}
   _iPublisher: {fileID: 11400000, guid: d06e8862b522a134c8dcc9cf9ad559bf, type: 2}
 --- !u!4 &1252307991 stripped
 Transform:

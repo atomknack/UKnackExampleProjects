@@ -11,6 +11,9 @@ namespace UKnack.Concrete.Events
     [AddComponentMenu("UKnack/CallbackContexTo/ValueToBool")]
     internal sealed class CallbackContextValueToBool : MonoBehaviour
     {
+        [SerializeField] 
+        private bool _ignoreStarted = false;
+
         [SerializeField]
         [ValidReference(typeof(IPublisher<bool>), nameof(IPublisher<bool>.Validate), typeof(IPublisher<bool>))]
         [DisableEditingInPlaymode]
@@ -20,7 +23,10 @@ namespace UKnack.Concrete.Events
 
         public void PublishAsBool(CallbackContext ctx)
         {
+            if (_ignoreStarted && ctx.started)//ctx.phase == UnityEngine.InputSystem.InputActionPhase.Started)
+                return;
             float rawvalue = ctx.ReadValue<float>();
+            //Debug.Log($"{rawvalue} {ctx.phase} {ctx.started}");
             bool value = (1 - rawvalue) < 0.999f; 
             _iPublisherAsInterface.Publish(value);
         }
