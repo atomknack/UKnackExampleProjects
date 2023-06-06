@@ -1,6 +1,5 @@
 using Mirror;
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UKnack.Attributes;
 using UKnack.Events;
 using UnityEngine;
@@ -12,10 +11,33 @@ public class ShooterLikePlayer : NetworkBehaviour
     [DisableEditingInPlaymode]
     private SOEvent<Vector2> _xzInputEvent;
 
+    [SerializeField]
+    [ValidReference]
+    [DisableEditingInPlaymode]
+    private TMP_Text _floatingPlayerText;
+
+    [SyncVar(hook = nameof(OnNameChanged))]
+    private string _playerName;
+
+    [SyncVar(hook = nameof(OnColorChanged))]
+    private Color _playerNameColor = Color.white;
+
     private Vector3 _move = Vector3.zero;
+
+    private void OnNameChanged(string oldValue, string newValue)
+    {
+        _floatingPlayerText.text = newValue;
+    }
+    private void OnColorChanged(Color oldValue, Color newValue)
+    {
+        _floatingPlayerText.color = newValue;
+    }
+
 
     public void OnEnable()
     {
+        if (_floatingPlayerText == null)
+            throw new System.ArgumentNullException(nameof(_floatingPlayerText));
         if (_xzInputEvent == null)
             throw new System.ArgumentNullException(nameof(_xzInputEvent));
         _xzInputEvent.Subscribe(OnInputXZ);
@@ -37,6 +59,17 @@ public class ShooterLikePlayer : NetworkBehaviour
     {
         Camera.main.transform.SetParent(transform);
         Camera.main.transform.localPosition = Vector3.zero;
+
+        string name = "Player" + UnityEngine.Random.Range(100, 999);
+        Color color = new(Random.Range(0f,1f), Random.Range(0f,1f), Random.Range(0f,1f));
+        CmdSetupPlayer(name, color);
+    }
+
+    [Command]
+    public void CmdSetupPlayer(string playerName, Color nameColor)
+    {
+        _playerName = playerName;
+        _playerNameColor = nameColor;
     }
 
     private void Update()
