@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); position: absolute; bottom: 20%; left: 5%;">
+        <ui:Button tabindex="-1" text="Log something" display-tooltip-when-elided="true" name="Log1" />
+        <ui:Button tabindex="-1" text="Log something different" display-tooltip-when-elided="true" name="Log2" />
+    </ui:VisualElement>
+</ui:UXML>
