@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 500px;">
+        <ui:VisualElement style="flex-wrap: nowrap; flex-direction: column;">
+            <ui:IntegerField label="sorting Order of new" value="42" name="SortingOrderInput" />
+            <ui:Button tabindex="-1" text="AddRandomColoredSorted" display-tooltip-when-elided="true" name="AddButton" />
+            <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); height: 20px;" />
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+            <UKnack.UI.VisualElementSortedOnAddition name="AddSortedHere" element-sorting-order="100" style="height: 700px; background-color: rgba(0, 0, 0, 0.35);" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
