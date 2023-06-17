@@ -1,0 +1,98 @@
+{
+    "name": "MovePlayer",
+    "maps": [
+        {
+            "name": "Gameplay",
+            "id": "b0180b34-284b-4d1f-bc02-c97ea13c9fa8",
+            "actions": [
+                {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "08909957-fa83-41b9-ae50-3d5cb52efe40",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "WSAD",
+                    "type": "Value",
+                    "id": "59c1ce1f-3158-4a8b-b861-bdf26059f665",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c87ec115-f73b-4feb-acb6-a39908090d69",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "12eea444-bd12-43c1-addd-56dced8aa394",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "WSAD",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "40ba6a68-2e3f-4392-9190-7b6fdf59b51d",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "WSAD",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "ab484f21-4d1a-4a56-834d-1f8d1a975893",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "WSAD",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "181eb518-4fa4-4d2d-9dda-dd2b3cc7d862",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "WSAD",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "82015453-ba04-4dd1-a035-454a4b2d9bac",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "WSAD",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
