@@ -55,14 +55,17 @@ public class PlayerMoveAndJump : MonoBehaviour
         //Debug.Log(_isGrounded);
         if (!CanJump)
             return;
-        _rigidbody.AddForce(Vector3.up * jumpAmount, ForceMode.Impulse);
+        _rigidbody.AddForce(jumpAmount * Vector3.up, ForceMode.Impulse);
     }
 
     void OnCollisionEnter(Collision hit)
     {
-        Debug.Log("OnTriggerEnter");
-        _isGrounded = true;
-        _ticksAfterGrounded = 0;
+        //Debug.Log("OnTriggerEnter");
+        if (hit.gameObject.GetComponent<Ground>() != null)
+        {
+            _isGrounded = true;
+            _ticksAfterGrounded = 0;
+        }
     }
     void OnCollisionExit(Collision hit)
     {
@@ -79,7 +82,10 @@ public class PlayerMoveAndJump : MonoBehaviour
         {
             //Debug.Log($"{_isGrounded} {_ticksAfterGrounded}");
             if (_isGrounded)
+            {
+                _rigidbody.AddForce(_rigidbody.mass * gravityScale * 0.1f * Vector3.up );
                 return;
+            }
             if (_ticksAfterGrounded > 1000)
                 return;
             _ticksAfterGrounded++;
