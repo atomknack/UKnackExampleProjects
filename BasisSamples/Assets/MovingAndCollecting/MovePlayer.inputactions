@@ -19,7 +19,7 @@
                     "type": "Value",
                     "id": "59c1ce1f-3158-4a8b-b861-bdf26059f665",
                     "expectedControlType": "Vector2",
-                    "processors": "",
+                    "processors": "NormalizeVector2",
                     "interactions": "",
                     "initialStateCheck": true
                 }
@@ -90,6 +90,17 @@
                     "action": "WSAD",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "aa105bcc-b544-4236-8327-21c50c76db7a",
+                    "path": "<Gamepad>/dpad",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "WSAD",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
