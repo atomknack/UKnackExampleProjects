@@ -17,6 +17,10 @@ public class UnconditionalSpawner : MonoBehaviour
     }
 
     [SerializeField]
+    [MarkNullAsColor(0.4f, 0.4f, 0.2f, "if null will be instantiated in root of scene")]
+    private Transform _newParent;
+
+    [SerializeField]
     [ValidReference]
     private GameObject _spawn;
 
@@ -34,7 +38,10 @@ public class UnconditionalSpawner : MonoBehaviour
     {
         if (_timeToSpawn < 0)
         {
-            Instantiate(_spawn, transform);
+            if (_newParent != null)
+                Instantiate(_spawn, transform.position, transform.rotation, _newParent);
+            else
+                Instantiate(_spawn, transform.position, transform.rotation);
             _timeToSpawn = _timeBetweenSpawns.GetRand();
         }
         _timeToSpawn -= Time.deltaTime;
