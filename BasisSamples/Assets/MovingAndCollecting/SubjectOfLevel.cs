@@ -6,7 +6,7 @@ public class SubjectOfLevel : MonoBehaviour
 {
     float lowerBorder = - 100f;
 
-    public void WentOutside()
+    public virtual void WentOutside()
     {
         Destroy(gameObject);
     }
