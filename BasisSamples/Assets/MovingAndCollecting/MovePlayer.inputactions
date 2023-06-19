@@ -37,6 +37,28 @@
                     "isPartOfComposite": false
                 },
                 {
+                    "name": "",
+                    "id": "e248c7ae-3d64-40f5-89cd-ab98ec79e5fe",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "55926df7-27e5-4c0d-b77e-5470d55be9f9",
+                    "path": "<Gamepad>/leftStickPress",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
                     "name": "2D Vector",
                     "id": "12eea444-bd12-43c1-addd-56dced8aa394",
                     "path": "2DVector",
@@ -94,7 +116,7 @@
                 {
                     "name": "",
                     "id": "aa105bcc-b544-4236-8327-21c50c76db7a",
-                    "path": "<Gamepad>/dpad",
+                    "path": "<Gamepad>/leftStick",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
