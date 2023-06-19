@@ -6,12 +6,12 @@ public class LoadSceneCommandSyncAndSingle : MonoBehaviour
     [SerializeField]
     private string _sceneName;
 
-    protected void Execute()
+    public void Execute()
     {
         Execute(_sceneName);
     }
 
-    protected void Execute(string sceneName)
+    public void Execute(string sceneName)
     {
         SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
     }
