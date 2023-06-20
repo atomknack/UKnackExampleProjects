@@ -20,7 +20,7 @@ public class Collector : MonoBehaviour
 
         var collectibleGold = other.GetComponent<CollectibleGold>();
         //Debug.Log(collectibleGold);
-        if (collectibleGold != null && collectibleGold.TryCollect(out int worth))
+        if (collectibleGold != null && collectibleGold.TryCollect(out int worth, transform))
         {
             _collectedValue.SetValue(_collectedValue.GetValue() + worth);
         }    
