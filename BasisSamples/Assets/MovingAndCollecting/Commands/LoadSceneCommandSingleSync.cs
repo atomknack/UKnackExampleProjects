@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LoadSceneCommandSyncAndSingle : MonoBehaviour
+public class LoadSceneCommandSingleSync : MonoBehaviour
 {
     [SerializeField]
     private string _sceneName;
