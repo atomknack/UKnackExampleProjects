@@ -996,6 +996,8 @@ GameObject:
   - component: {fileID: 7502125614449582055}
   - component: {fileID: 4738691164915432331}
   - component: {fileID: 7116906735696876682}
+  - component: {fileID: 1826432077299964605}
+  - component: {fileID: 127621715364622591}
   m_Layer: 0
   m_Name: MainMenu
   m_TagString: Untagged
@@ -1094,6 +1096,42 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+--- !u!114 &1826432077299964605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5815582990543260783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36b09487d317f3143ba3f06fdaf26e50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _document: {fileID: 0}
+  _sliderName: AllAudio
+  valueProvider: {fileID: 11400000, guid: a54505dde6c704343a30be95769d1090, type: 2}
+  _onSliderUIChanged:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &127621715364622591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5815582990543260783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36b09487d317f3143ba3f06fdaf26e50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _document: {fileID: 0}
+  _sliderName: AudioEffects
+  valueProvider: {fileID: 11400000, guid: 2897141836832d44b84bb76e0a1c63a1, type: 2}
+  _onSliderUIChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6896968944815075472
 GameObject:
   m_ObjectHideFlags: 0
