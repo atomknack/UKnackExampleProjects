@@ -1084,8 +1084,9 @@ MonoBehaviour:
   _buttonClickEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7773801387789721}
-        m_TargetAssemblyTypeName: ApplicationQuit, Assembly-CSharp
+      - m_Target: {fileID: 11400000, guid: dcc7694fdb346f14a805766cbe566b71, type: 2}
+        m_TargetAssemblyTypeName: UKnack.Concrete.Commands.ScriptableObjects.ApplicationQuitCommand,
+          UKnackBasisConcrete
         m_MethodName: Execute
         m_Mode: 1
         m_Arguments:
