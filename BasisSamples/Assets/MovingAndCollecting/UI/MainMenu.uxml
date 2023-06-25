@@ -8,5 +8,6 @@
         <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); height: 30%;" />
         <ui:Button text="Start new game" display-tooltip-when-elided="true" name="StartNewGame" focusable="false" style="bottom: 20px; margin-bottom: 10px; background-color: rgb(207, 217, 89);" />
         <ui:Button text="Exit application" display-tooltip-when-elided="true" name="ExitGame" focusable="false" style="bottom: 20px; margin-bottom: 2px; background-color: rgb(195, 131, 131);" />
+        <ui:Button text="Close" display-tooltip-when-elided="true" focusable="false" name="Close" style="position: absolute; top: 20px; background-color: rgb(121, 147, 219); left: 30px; height: 40px;" />
     </ui:VisualElement>
 </ui:UXML>
