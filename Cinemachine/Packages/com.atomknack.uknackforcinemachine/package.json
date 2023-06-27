@@ -8,7 +8,8 @@
   "documentationUrl": "https://github.com/atomknack/UKnackSource/wiki",
   "license": "MIT",
   "dependencies": {
-    "com.unity.inputsystem": "1.5.1"
+    "com.unity.inputsystem": "1.5.1",
+    "com.unity.cinemachine": "2.7.1"
   },
   "author": {
     "name": "atomknack",
