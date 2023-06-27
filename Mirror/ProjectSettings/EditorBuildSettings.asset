@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ShooterLike/ShooterLike.unity
     guid: 6b7c6479444eae84b82f7d47fd462bf6
+  - enabled: 1
+    path: Assets/ShooterLikeMultiscene/MainSceneShooterLike.unity
+    guid: fb6162630b5c52047bd921523f051677
+  - enabled: 1
+    path: Assets/ShooterLikeMultiscene/OnlineSceneShooterLike.unity
+    guid: cc21c79a9f01d6e4d94fe0c14a3bac7b
   m_configObjects: {}
