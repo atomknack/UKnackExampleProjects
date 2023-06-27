@@ -10,7 +10,7 @@
   "dependencies": {
     "com.unity.inputsystem": "1.5.1",
     "com.unity.cinemachine": "2.7.1",
-    "com.atomknack.uknackbasis": "2.0.0",
+    "com.atomknack.uknackbasis": "2.0.0"
   },
   "author": {
     "name": "atomknack",
