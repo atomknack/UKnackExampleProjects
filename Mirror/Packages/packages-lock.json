@@ -9,12 +9,32 @@
       },
       "hash": "33c75fbfdd2ddaa460f1e15421a139d88d4fa915"
     },
+    "com.atomknack.uknackforcinemachine": {
+      "version": "https://github.com/atomknack/UKnackExampleProjects.git?path=/Cinemachine/Packages/com.atomknack.uknackforcinemachine",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.inputsystem": "1.5.1",
+        "com.unity.cinemachine": "2.7.1",
+        "com.atomknack.uknackbasis": "2.0.0"
+      },
+      "hash": "2da99144c51ecad83c0580dface7090ba6108414"
+    },
     "com.unity.ai.navigation": {
       "version": "1.1.3",
       "depth": 0,
       "source": "registry",
       "dependencies": {
         "com.unity.modules.ai": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.cinemachine": {
+      "version": "2.9.7",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.test-framework": "1.1.31"
       },
       "url": "https://packages.unity.com"
     },
