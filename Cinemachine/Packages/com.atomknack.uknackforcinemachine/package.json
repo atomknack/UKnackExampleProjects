@@ -1,0 +1,19 @@
+{
+  "name": "com.atomknack.uknackforcinemachine",
+  "version": "1.0.0",
+  "displayName": "UKnack for Cinemachine",
+  "description": "Set of scripts that bind UKnack and Cinemachine",
+  "unity": "2022.2",
+  "unityRelease": "0b8",
+  "documentationUrl": "https://github.com/atomknack/UKnackSource/wiki",
+  "license": "MIT",
+  "dependencies": {
+    "com.unity.inputsystem": "1.5.1"
+  },
+  "author": {
+    "name": "atomknack",
+    "email": "atomknack@gmail.com",
+    "url": "atomknack.com"
+  },
+  "scopedRegistries": []
+}
