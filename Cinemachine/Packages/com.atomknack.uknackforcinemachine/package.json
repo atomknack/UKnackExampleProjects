@@ -1,6 +1,6 @@
 {
   "name": "com.atomknack.uknackforcinemachine",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "displayName": "UKnack for Cinemachine",
   "description": "Set of scripts that bind UKnack and Cinemachine. \n\nGit url: \nhttps://github.com/atomknack/UKnackExampleProjects.git?path=/Cinemachine/Packages/com.atomknack.uknackforcinemachine",
   "unity": "2022.2",
@@ -9,7 +9,8 @@
   "license": "MIT",
   "dependencies": {
     "com.unity.inputsystem": "1.5.1",
-    "com.unity.cinemachine": "2.7.1"
+    "com.unity.cinemachine": "2.7.1",
+    "com.atomknack.uknackbasis": "2.0.0",
   },
   "author": {
     "name": "atomknack",
