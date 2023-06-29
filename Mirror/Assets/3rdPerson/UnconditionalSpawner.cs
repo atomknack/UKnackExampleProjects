@@ -1,3 +1,4 @@
+using Mirror;
 using UKnack.Attributes;
 using UnityEngine;
 
@@ -28,21 +29,25 @@ public class UnconditionalSpawner : MonoBehaviour
     private RandRange _timeBetweenSpawns;
 
     private float _timeToSpawn;
-    private void Awake()
+
+    private void OnEnable()
     {
         if ( _spawn == null )
             throw new System.ArgumentNullException(nameof( _spawn ));
+
     }
 
     private void FixedUpdate()
     {
         if (_timeToSpawn < 0)
         {
+            GameObject instantiated;
             if (_newParent != null)
-                Instantiate(_spawn, transform.position, transform.rotation, _newParent);
+                instantiated = Instantiate(_spawn, transform.position, transform.rotation, _newParent);
             else
-                Instantiate(_spawn, transform.position, transform.rotation);
+                instantiated = Instantiate(_spawn, transform.position, transform.rotation);
             _timeToSpawn = _timeBetweenSpawns.GetRand();
+            NetworkServer.Spawn(instantiated);
         }
         _timeToSpawn -= Time.deltaTime;
     }
