@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/3rdPerson/Level1.unity
+    guid: 5ed2557e505aee541acfd29aca345d24
+  - enabled: 1
     path: Assets/ShooterLike/ShooterLike.unity
     guid: 6b7c6479444eae84b82f7d47fd462bf6
   - enabled: 1
@@ -14,9 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ShooterLikeMultiscene/OnlineSceneShooterLike.unity
     guid: cc21c79a9f01d6e4d94fe0c14a3bac7b
-  - enabled: 1
-    path: Assets/3rdPerson/Level1.unity
-    guid: 5ed2557e505aee541acfd29aca345d24
   - enabled: 1
     path: Assets/3rdPerson/Level2.unity
     guid: 29fab2e1389f6b0488b5e39fada38881

@@ -13,13 +13,18 @@ public class PlayerMoveAndJump : NetworkBehaviour
 
     [SerializeField]
     [ValidReference]
-    private SOValue<Vector2> _moveXZ;
+    private SOValue<Vector2> _InputMoveXZ;
+    [SerializeField]
+    private SOEvent _InputJumpEvent;
+
+    private bool _inputInitialized = false;
+
+    private Vector2 _moveXZ;
+    private Vector2 _clientPrevMoveDirection;
 
     [SerializeField]
     private Vector2 _speedXZ;
 
-    [SerializeField]
-    private SOEvent _jumpEvent;
 
     [SerializeField]
     private float jumpAmount = 1f;
@@ -34,18 +39,19 @@ public class PlayerMoveAndJump : NetworkBehaviour
     [ValidReference]
     private Rigidbody _rigidbody;
 
-    private void OnEnable()
+    public override void OnStartLocalPlayer()
     {
         InitVariablesOrThrow();
 
-        _jumpEvent.Subscribe(Jump);
+        _InputJumpEvent.Subscribe(OnInputJump);
+        _inputInitialized = true;
 
         void InitVariablesOrThrow()
         {
-            if (_moveXZ == null)
-                throw new System.ArgumentNullException(nameof(_moveXZ));
-            if (_jumpEvent == null)
-                throw new System.ArgumentNullException(nameof(_jumpEvent));
+            if (_InputMoveXZ == null)
+                throw new System.ArgumentNullException(nameof(_InputMoveXZ));
+            if (_InputJumpEvent == null)
+                throw new System.ArgumentNullException(nameof(_InputJumpEvent));
 
             if (_rigidbody == null)
                 _rigidbody = GetComponentInChildren<Rigidbody>();
@@ -54,12 +60,24 @@ public class PlayerMoveAndJump : NetworkBehaviour
         }
     }
 
+    private void OnInputJump()
+    {
+        Jump();
+    }
+
+    [Command]
     private void Jump()
     {
         //Debug.Log(_isGrounded);
         if (!CanJump)
             return;
         _rigidbody.AddForce(jumpAmount * Vector3.up, ForceMode.Impulse);
+    }
+
+    [Command]
+    private void Move(Vector2 direction)
+    {
+        _moveXZ = direction;
     }
 
     void OnCollisionEnter(Collision hit)
@@ -78,6 +96,11 @@ public class PlayerMoveAndJump : NetworkBehaviour
 
     private void FixedUpdate()
     {
+        HandleClientMoveInput();
+
+        if (isServer == false)
+            return;
+
         CalcGrounded();
         MoveRigidbodyXZ(CanJump ? 1f : 0.5f);
         RemoveFloatiness();
@@ -87,7 +110,7 @@ public class PlayerMoveAndJump : NetworkBehaviour
             //Debug.Log($"{_isGrounded} {_ticksAfterGrounded}");
             if (_isGrounded)
             {
-                _rigidbody.AddForce(_rigidbody.mass * gravityScale * 0.1f * Vector3.up );
+                _rigidbody.AddForce(_rigidbody.mass * gravityScale * 0.1f * Vector3.up);
                 return;
             }
             if (_ticksAfterGrounded > 1000)
@@ -96,7 +119,7 @@ public class PlayerMoveAndJump : NetworkBehaviour
         }
         void MoveRigidbodyXZ(float unrestricted)
         {
-            var xz = _moveXZ.GetValue() * _speedXZ * unrestricted;
+            var xz = _moveXZ * _speedXZ * unrestricted;
             _rigidbody.velocity += new Vector3(xz.x, 0, xz.y);
         }
         void RemoveFloatiness()
@@ -105,8 +128,25 @@ public class PlayerMoveAndJump : NetworkBehaviour
         }
     }
 
-    private void OnDisable()
+    private void HandleClientMoveInput()
     {
-        _jumpEvent.UnsubscribeNullSafe(Jump);
+        if (isLocalPlayer == false)
+            return;
+
+        Vector2 newDirection = _InputMoveXZ.GetValue();
+        if (newDirection != _clientPrevMoveDirection)
+        {
+            Move(newDirection);
+            _clientPrevMoveDirection = newDirection;
+        }
+
+    }
+
+    public override void OnStopClient()
+    {
+        if (_inputInitialized == false)
+            return;
+
+        _InputJumpEvent.UnsubscribeNullSafe(OnInputJump);
     }
 }

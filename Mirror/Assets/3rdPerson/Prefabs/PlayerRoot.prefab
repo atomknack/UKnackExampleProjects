@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2327384158175402434}
   - component: {fileID: 7590301267136378499}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Skin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -154,9 +154,9 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
-  _moveXZ: {fileID: 11400000, guid: 1389c44b6ddd4af41a514237fd298e03, type: 2}
+  _InputMoveXZ: {fileID: 11400000, guid: 1389c44b6ddd4af41a514237fd298e03, type: 2}
+  _InputJumpEvent: {fileID: 11400000, guid: dff9c7efb1d1a274a8a312f2e3382c0c, type: 2}
   _speedXZ: {x: 1, y: 1}
-  _jumpEvent: {fileID: 11400000, guid: dff9c7efb1d1a274a8a312f2e3382c0c, type: 2}
   jumpAmount: 10
   gravityScale: 5
   _rigidbody: {fileID: 1406379533917405095}
@@ -175,7 +175,7 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
-  target: {fileID: 2105937943081357366}
+  target: {fileID: 5905826716428763393}
   clientAuthority: 0
   syncPosition: 1
   syncRotation: 1
