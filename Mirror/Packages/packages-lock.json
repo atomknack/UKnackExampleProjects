@@ -7,7 +7,7 @@
       "dependencies": {
         "com.unity.inputsystem": "1.5.1"
       },
-      "hash": "33c75fbfdd2ddaa460f1e15421a139d88d4fa915"
+      "hash": "c04cb7e68f8b652c97c947dabbc82a8db2aceae1"
     },
     "com.atomknack.uknackforcinemachine": {
       "version": "https://github.com/atomknack/UKnackExampleProjects.git?path=/Cinemachine/Packages/com.atomknack.uknackforcinemachine",
