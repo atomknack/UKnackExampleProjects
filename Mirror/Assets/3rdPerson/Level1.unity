@@ -351,7 +351,7 @@ MonoBehaviour:
   networkAddress: localhost
   maxConnections: 100
   authenticator: {fileID: 0}
-  playerPrefab: {fileID: 4614800260690875379, guid: f6c988b82dff8904785d85143a718685, type: 3}
+  playerPrefab: {fileID: 4688047726975758612, guid: f6c988b82dff8904785d85143a718685, type: 3}
   autoCreatePlayer: 1
   playerSpawnMethod: 0
   spawnPrefabs:
@@ -1186,7 +1186,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2062736524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1204,9 +1204,8 @@ MonoBehaviour:
   _whenBiggerThan:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: cbc6e411732fd2242b94a2fc2556cf35, type: 2}
-        m_TargetAssemblyTypeName: UKnack.Concrete.Commands.ScriptableObjects.LoadSceneSingleSyncCommand,
-          UKnackBasisConcrete
+      - m_Target: {fileID: 11400000, guid: 45675406abc30994b90418165831edae, type: 2}
+        m_TargetAssemblyTypeName: LoadSceneNetworkScene, Assembly-CSharp
         m_MethodName: Execute
         m_Mode: 1
         m_Arguments:

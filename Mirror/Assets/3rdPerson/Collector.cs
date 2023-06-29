@@ -29,7 +29,10 @@ public class Collector : NetworkBehaviour
         {
             //_collectedValue.SetValue(_collectedValue.GetValue() + worth);
             _collected += worth;
-        }    
+        }  
+        
+        if (_collected > 15)
+            NetworkManager.singleton.ServerChangeScene("Level2");
     }
 
     private void OnCliendGetNewCollectedValue(int oldCollected, int newCollected)

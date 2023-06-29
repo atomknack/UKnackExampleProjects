@@ -18,9 +18,8 @@ MonoBehaviour:
   _afterSubscribers:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 502f781c752f87b48832a980e2418e73, type: 2}
-        m_TargetAssemblyTypeName: UKnack.Concrete.Commands.ScriptableObjects.LoadSceneSingleSyncCommand,
-          UKnackBasisConcrete
+      - m_Target: {fileID: 11400000, guid: 744d45923d021a7408909ccc9f069134, type: 2}
+        m_TargetAssemblyTypeName: LoadSceneNetworkScene, Assembly-CSharp
         m_MethodName: Execute
         m_Mode: 1
         m_Arguments:
