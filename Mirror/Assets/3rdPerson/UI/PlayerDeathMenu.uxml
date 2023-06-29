@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1; background-color: rgba(154, 66, 33, 0.87); position: absolute; left: 130px; width: 700px; height: 80%; top: 40px; font-size: 22px;">
+        <ui:Label tabindex="-1" text="Player died!" display-tooltip-when-elided="true" style="top: 30px; font-size: 34px; -unity-text-align: upper-center;" />
+        <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); height: 30%;" />
+        <ui:Button text="Start again" display-tooltip-when-elided="true" name="StartNewGame" style="bottom: 20px;" />
+    </ui:VisualElement>
+</ui:UXML>
