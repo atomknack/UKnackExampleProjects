@@ -102,7 +102,11 @@ public class PlayerMoveAndJump : NetworkBehaviour
     }
     void OnCollisionExit(Collision hit)
     {
-        _isGrounded = false;
+        //Debug.Log("OnTriggerEnter");
+        if (hit.gameObject.GetComponent<Ground>() != null)
+        {
+            _isGrounded = false;
+        }
     }
 
     private void FixedUpdate()
