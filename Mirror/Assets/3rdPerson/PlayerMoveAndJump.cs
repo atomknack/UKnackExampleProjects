@@ -60,6 +60,17 @@ public class PlayerMoveAndJump : NetworkBehaviour
         }
     }
 
+    private void OnDisable() => OnStopClient();
+    public override void OnStopClient()
+    {
+        if (_inputInitialized == false)
+            return;
+
+        _InputJumpEvent.UnsubscribeNullSafe(OnInputJump);
+        _inputInitialized = false;
+    }
+
+
     private void OnInputJump()
     {
         Jump();
@@ -140,13 +151,5 @@ public class PlayerMoveAndJump : NetworkBehaviour
             _clientPrevMoveDirection = newDirection;
         }
 
-    }
-
-    public override void OnStopClient()
-    {
-        if (_inputInitialized == false)
-            return;
-
-        _InputJumpEvent.UnsubscribeNullSafe(OnInputJump);
     }
 }
