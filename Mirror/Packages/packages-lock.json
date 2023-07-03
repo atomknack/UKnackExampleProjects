@@ -7,7 +7,7 @@
       "dependencies": {
         "com.unity.inputsystem": "1.5.1"
       },
-      "hash": "c04cb7e68f8b652c97c947dabbc82a8db2aceae1"
+      "hash": "da3bc72b217947320f2ad8c54b04b39992b60f33"
     },
     "com.atomknack.uknackforcinemachine": {
       "version": "https://github.com/atomknack/UKnackExampleProjects.git?path=/Cinemachine/Packages/com.atomknack.uknackforcinemachine",
@@ -18,7 +18,7 @@
         "com.unity.cinemachine": "2.7.1",
         "com.atomknack.uknackbasis": "2.0.0"
       },
-      "hash": "2783a862665fe6af8f2159ed9cbda6987478fd74"
+      "hash": "d1c020f9d3edfd3938fb65da10cdf156005085d0"
     },
     "com.unity.ai.navigation": {
       "version": "1.1.3",
