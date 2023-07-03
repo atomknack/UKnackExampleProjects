@@ -43,8 +43,8 @@ public class Collector : NetworkBehaviour
 
 
 
-        if (_collected > 15)
-            NetworkManager.singleton.ServerChangeScene("Level2");
+        //if (_collected > 15)
+        //    NetworkManager.singleton.ServerChangeScene("Level2");
     }
 
     private void OnCliendGetNewCollectedValue(int oldCollected, int newCollected)
