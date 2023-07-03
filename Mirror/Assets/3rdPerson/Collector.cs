@@ -63,7 +63,7 @@ public class Collector : NetworkBehaviour
         if (_collectedDictionary_netId_amount == null)
             throw new System.ArgumentNullException(nameof(_collectedDictionary_netId_amount));
 
-        _identityNetId = (int)netIdentity.netId;
+        _identityNetId = netIdentity.connectionToClient.connectionId;//.netId;
     }
 
     public override void OnStartClient()
