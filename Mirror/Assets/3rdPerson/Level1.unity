@@ -654,7 +654,7 @@ MonoBehaviour:
   _event:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 559acd577c1b2f44cb89730fa4652a3b, type: 2}
+      - m_Target: {fileID: 11400000, guid: 1fb46661b7f91b547875e51d91b86a7e, type: 2}
         m_TargetAssemblyTypeName: UKnack.Concrete.Commands.ScriptableObjects.ServerChangeSceneCommand,
           Assembly-CSharp
         m_MethodName: Execute

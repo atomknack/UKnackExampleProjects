@@ -34,7 +34,7 @@ public class RunServerEventOnCount : NetworkBehaviour, ISubscriberToEvent<int, i
 	}
     public override void OnStopServer()
     {
-        base.OnStopServer();
+		Debug.Log($"RunServerEventOnCount OnStopServer called");
 		_keyValue.UnsubscribeNullSafe(this);
     }
 }
