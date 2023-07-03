@@ -49,17 +49,17 @@ public class Collector : NetworkBehaviour
 
     private void OnCliendGetNewCollectedValue(int oldCollected, int newCollected)
     {
-        if (isOwned == false) 
+        if (isOwned == false)  //probably bug in Mirror, for now this will do. if hook will activates in other not owned scripts, probably need to do bug report.
             return;
 
-        Debug.Log($"Hook called for {_identityNetId}, s: {isServer} {isServerOnly} c: {isClient} {isClientOnly} o: {isOwned} lp: {isLocalPlayer}");
+        //Debug.Log($"Hook called for {_identityNetId}, s: {isServer} {isServerOnly} c: {isClient} {isClientOnly} o: {isOwned} lp: {isLocalPlayer}");
         _collectedValue.SetValue(newCollected);
 
     }
 
     public override void OnStartServer()
     {
-        Debug.Log($"OnStartServer: {isServer} {isServerOnly} {isClient} {isClientOnly} {isOwned} {isLocalPlayer}");
+        //Debug.Log($"OnStartServer: {isServer} {isServerOnly} {isClient} {isClientOnly} {isOwned} {isLocalPlayer}");
         if (_collectedDictionary_netId_amount == null)
             throw new System.ArgumentNullException(nameof(_collectedDictionary_netId_amount));
 
@@ -68,7 +68,7 @@ public class Collector : NetworkBehaviour
 
     public override void OnStartClient()
     {
-        Debug.Log($"OnStartClient: {isServer} {isServerOnly} {isClient} {isClientOnly} {isOwned} {isLocalPlayer}");
+        //Debug.Log($"OnStartClient: {isServer} {isServerOnly} {isClient} {isClientOnly} {isOwned} {isLocalPlayer}");
         if (_collectedValue == null)
             throw new System.ArgumentNullException(nameof(_collectedValue));
     }
