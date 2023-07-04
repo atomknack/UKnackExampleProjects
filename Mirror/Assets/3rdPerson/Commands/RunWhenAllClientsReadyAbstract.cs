@@ -4,58 +4,65 @@ using System.Collections.Generic;
 using System.Linq;
 using UKnack;
 using UnityEngine;
-using UnityEngine.Events;
 
-public class RunWhenAllClientsReady : NetworkBehaviour, ICommand
+public abstract class RunWhenAllClientsReadyAbstract : NetworkBehaviour
 {
-    [SerializeField]
-    private UnityEvent _whenAllReady;
-
-    Dictionary<int, bool> _clientsReady = new Dictionary<int, bool>();
-    public string Description => nameof(RunWhenAllClientsReady);
+    
+    protected Dictionary<int, bool> _clientsReady = new Dictionary<int, bool>();
 
     private bool _ServerRunning = false;
     private bool _ClientRunning = false;
+    
+    protected abstract void RunCommandOnServerWhenAllReady();
+    protected abstract void OnClientInitialize();
+    protected abstract void OnClientPrepareForDestroy();
 
-    public void Execute()
-    {
-        ExecuteOnServer();
-    }
 
     [Command(requiresAuthority = false)]
-    public void ExecuteOnServer(NetworkConnectionToClient sender = null)
+    protected void CmdOnServer(NetworkConnectionToClient sender = null)
     {
         if (sender == null)
             throw new System.NullReferenceException(nameof(sender));
+        Debug.Log($"CmdOnServer called from {sender.connectionId}");
 
         _clientsReady[sender.connectionId] = true;
+
         TryRunCommand();
+
     }
 
-    public void OnServerWhenClientConnect(NetworkConnectionToClient conn)
+    public virtual void OnServerWhenClientConnect(NetworkConnectionToClient conn)
     {
         _clientsReady[conn.connectionId] = false;
     }
 
-    public void OnServerWhenClientDisconnect(NetworkConnectionToClient conn)
+    public virtual void OnServerWhenClientDisconnect(NetworkConnectionToClient conn)
     {
         _clientsReady.Remove(conn.connectionId);
         TryRunCommand();
     }
 
-    private bool TryRunCommand()
+    protected virtual bool TryRunCommand()
     {
+        //Debug.Log("no exception");
         if (_clientsReady.Count > 0)
         {
+            //Debug.Log($"still no exception {_clientsReady.Count}");
             if (_clientsReady.All(pair => pair.Value == true) )
             {
-                foreach (var pair in _clientsReady)
+                Debug.Log($"{_clientsReady.Count} all are true");
+
+                foreach (var pair in _clientsReady.ToArray()) //baby error
                 {
+                    //Debug.Log($"still no exception for {pair.Key} {pair.Value}");
                     _clientsReady[pair.Key] = false;
                 }
+                RunCommandOnServerWhenAllReady();
+                //Debug.Log($"no exception before returnning true");
                 return true;
             }
         }
+        //Debug.Log($"no exception before returnning false");
         return false;
     }
 
@@ -63,6 +70,10 @@ public class RunWhenAllClientsReady : NetworkBehaviour, ICommand
     {
         NetworkManagerCallbacks.OnServerWhenClientConnect += OnServerWhenClientConnect;
         NetworkManagerCallbacks.OnServerWhenClientDisconnect += OnServerWhenClientDisconnect;
+        foreach (var key in NetworkServer.connections.Keys)
+        {
+            _clientsReady[key] = false;
+        }
         _ServerRunning = true;
     }
 
@@ -78,21 +89,24 @@ public class RunWhenAllClientsReady : NetworkBehaviour, ICommand
 
     public override void OnStartClient()
     {
-        throw new System.NotImplementedException();
+        OnClientInitialize();
         _ClientRunning = true;
     }
+
     public override void OnStopClient()
     {
         if (_ClientRunning == false)
             return;
 
-        throw new System.NotImplementedException();
+        OnClientPrepareForDestroy();
 
         _ClientRunning = false;
     }
+
     public void OnDisable() 
     {
         OnStopServer();
+        OnStopClient();
     }
 
 
