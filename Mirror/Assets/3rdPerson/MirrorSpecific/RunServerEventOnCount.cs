@@ -18,7 +18,7 @@ public class RunServerEventOnCount : NetworkBehaviour, ISubscriberToEvent<int, i
 	[SerializeField]
 	private UnityEvent<int, int> _event;
 
-    public string Description => throw new System.NotImplementedException();
+    public string Description => nameof(RunServerEventOnCount);
 
     public void OnEventNotification(int key, int value)
     {

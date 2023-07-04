@@ -16,20 +16,17 @@ public class RunEventWhenAllClientsReady : RunWhenAllClientsReadyAbstract
 
     [SerializeField]
     private UnityEvent _serverSideEventWhenAllReady;
-    private void ReadyOnClient()
-    {
-        CmdOnServer();
-    }
+
     protected override void OnClientInitialize()
     {
         if (_clientReadyOnClientSide ==  null) 
             throw new System.ArgumentNullException(nameof(_clientReadyOnClientSide));
-        _clientReadyOnClientSide.Subscribe(ReadyOnClient);
+        _clientReadyOnClientSide.Subscribe(CommandOnClient);
     }
 
     protected override void OnClientPrepareForDestroy()
     {
-        _clientReadyOnClientSide.UnsubscribeNullSafe(ReadyOnClient);
+        _clientReadyOnClientSide.UnsubscribeNullSafe(CommandOnClient);
     }
 
     protected override void RunCommandOnServerWhenAllReady()
