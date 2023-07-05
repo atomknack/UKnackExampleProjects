@@ -64,7 +64,19 @@ public class Collector : NetworkBehaviour
             throw new System.ArgumentNullException(nameof(_collectedDictionary_netId_amount));
 
         _identityNetId = netIdentity.connectionToClient.connectionId;//.netId;
+        AssignCollectedFromDictionary();
+        StartCoroutine(AssignAgainInCaseInitNotHappenYet());
     }
+
+    IEnumerator AssignAgainInCaseInitNotHappenYet()
+    {
+        yield return null;
+        AssignCollectedFromDictionary();
+    }
+
+    private void AssignCollectedFromDictionary()=>
+        _collected = _collectedDictionary_netId_amount[_identityNetId];
+    
 
     public override void OnStartClient()
     {
