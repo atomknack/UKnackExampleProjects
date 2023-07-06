@@ -730,23 +730,10 @@ MonoBehaviour:
   _serverSideEventWhenAllReady:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 1755e47e91de8724194b34bfa3704967, type: 2}
-        m_TargetAssemblyTypeName: UKnack.Preconcrete.KeyValues.SOKeyValueMutableDictionaryWithDefaultValue`2[[System.Int32,
-          mscorlib
-        m_MethodName: Clear
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
-      - m_Target: {fileID: 11400000, guid: 559acd577c1b2f44cb89730fa4652a3b, type: 2}
-        m_TargetAssemblyTypeName: UKnack.Concrete.Commands.ScriptableObjects.ServerChangeSceneCommand,
-          Assembly-CSharp
-        m_MethodName: Execute
+      - m_Target: {fileID: 11400000, guid: 5870e336b4040ce4395bdf1879176b46, type: 2}
+        m_TargetAssemblyTypeName: UKnack.Concrete.Events.SOPublisher_Concrete_nongeneric,
+          UKnackBasisConcrete
+        m_MethodName: Publish
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

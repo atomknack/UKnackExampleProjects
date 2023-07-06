@@ -9,7 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85800374fa2614049b23f74503337840, type: 3}
-  m_Name: Collected_NetworkId_number
+  m_Script: {fileID: 11500000, guid: a5db0502968cee949a06f97528697b10, type: 3}
+  m_Name: ClientStartNewGame
   m_EditorClassIdentifier: 
-  _defaultValue: 0
+  _beforeSubscribers:
+    m_PersistentCalls:
+      m_Calls: []
+  _afterSubscribers:
+    m_PersistentCalls:
+      m_Calls: []
