@@ -810,7 +810,7 @@ MonoBehaviour:
   syncInterval: 0
   _givenKeyValue: {fileID: 11400000, guid: 1755e47e91de8724194b34bfa3704967, type: 2}
   _whenAnyValue: 5
-  _thanBaseValue: 11
+  _thanBaseValue: 12
   _then_InvokeEvent:
     m_PersistentCalls:
       m_Calls:
