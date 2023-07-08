@@ -6,7 +6,7 @@ using UKnack.KeyValues;
 using UKnack.Events;
 using UnityEngine.Events;
 
-public class RunServerUnityEventOnServerSOEvent : ServerBehaviourSimpleAbstract, ISubscriberToEvent
+public sealed class RunServerUnityEventOnServerSOEvent : ServerBehaviourSimpleAbstract, ISubscriberToEvent
 {
 	[SerializeField]
 	[ValidReference]

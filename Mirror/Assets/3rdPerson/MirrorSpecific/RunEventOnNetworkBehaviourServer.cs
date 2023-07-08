@@ -2,7 +2,7 @@ using Mirror;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class EventsOnNetworkBehaviour : NetworkBehaviour
+public sealed class EventsOnNetworkBehaviour : NetworkBehaviour
 {
     [SerializeField]
     private UnityEvent _onStartServer;

@@ -6,7 +6,7 @@ using UKnack.KeyValues;
 using UKnack.Events;
 using UnityEngine.Events;
 
-public class RunServerEventOnCount : NetworkBehaviour, ISubscriberToEvent<int, int>
+public sealed class RunServerEventOnCount : NetworkBehaviour, ISubscriberToEvent<int, int>
 {
 	[SerializeField]
 	[ValidReference]

@@ -4,7 +4,7 @@ using Mirror;
 using UnityEngine.Events;
 
 //https://mirror-networking.gitbook.io/docs/manual/guides/communications/networkbehaviour-callbacks
-public class RunEventOnNetworkBehaviourFull : NetworkBehaviour
+public sealed class RunEventOnNetworkBehaviourFull : NetworkBehaviour
 {
     // server
 
