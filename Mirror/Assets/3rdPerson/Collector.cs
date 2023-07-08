@@ -38,7 +38,7 @@ public class Collector : NetworkBehaviour
             _collected += worth;
 
             _collectedDictionary_netId_amount[_identityNetId] = _collected;
-            Debug.Log($"id {_identityNetId} changed value to {_collectedDictionary_netId_amount[_identityNetId]}");
+            //Debug.Log($"id {_identityNetId} changed value to {_collectedDictionary_netId_amount[_identityNetId]}");
         }
 
 
