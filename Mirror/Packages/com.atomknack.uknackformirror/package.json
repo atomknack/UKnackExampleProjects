@@ -1,0 +1,20 @@
+{
+  "name": "com.atomknack.uknackformirror",
+  "version": "0.0.1",
+  "displayName": "UKnack for Mirror",
+  "description": "Set of scripts that bind UKnack and Mirror. \n\nGit url: \nhttps://github.com/atomknack/UKnackExampleProjects.git?path=/Mirror/Packages/com.atomknack.uknackformirror",
+  "unity": "2022.2",
+  "unityRelease": "0b8",
+  "documentationUrl": "https://github.com/atomknack/UKnackSource/wiki",
+  "license": "MIT",
+  "dependencies": {
+    "com.unity.inputsystem": "1.5.1",
+    "com.atomknack.uknackbasis": "2.0.0"
+  },
+  "author": {
+    "name": "atomknack",
+    "email": "atomknack@gmail.com",
+    "url": "atomknack.com"
+  },
+  "scopedRegistries": []
+}
