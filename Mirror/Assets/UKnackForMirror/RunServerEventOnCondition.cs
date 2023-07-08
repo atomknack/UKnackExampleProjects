@@ -6,7 +6,7 @@ using UKnack.KeyValues;
 using UKnack.Events;
 using UnityEngine.Events;
 
-public sealed class RunServerEventOnCondition : NetworkBehaviour, ISubscriberToEvent<int, int>
+public sealed class RunServerEventOnCondition : ServerBehaviourSimpleAbstract, ISubscriberToEvent<int, int>
 {
     public enum Condition
     {
@@ -39,18 +39,6 @@ public sealed class RunServerEventOnCondition : NetworkBehaviour, ISubscriberToE
             _then_InvokeEvent.Invoke(key, value);
     }
 
-    public override void OnStartServer()
-    {
-        if (_givenKeyValue == null)
-            throw new System.ArgumentNullException(nameof(_givenKeyValue));
-        _givenKeyValue.Subscribe(this);
-    }
-    public override void OnStopServer()
-    {
-        Debug.Log($"RunServerEventOnCount OnStopServer called");
-        _givenKeyValue.UnsubscribeNullSafe(this);
-    }
-
     private static bool CheckCondition(Condition condition, int baseValue, int comparedValue)
     {
         switch (condition)
@@ -70,5 +58,18 @@ public sealed class RunServerEventOnCondition : NetworkBehaviour, ISubscriberToE
             default:
                 throw new System.ArgumentException("Unknown condition");
         }
+    }
+
+    protected override void NetworkBehaviourOnEnable()
+    {
+        if (_givenKeyValue == null)
+            throw new System.ArgumentNullException(nameof(_givenKeyValue));
+        _givenKeyValue.Subscribe(this);
+    }
+
+    protected override void NetworkBehaviourOnDisable()
+    {
+        //Debug.Log($"RunServerEventOnCount OnStopServer called");
+        _givenKeyValue.UnsubscribeNullSafe(this);
     }
 }
