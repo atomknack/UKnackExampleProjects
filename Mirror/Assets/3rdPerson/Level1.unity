@@ -808,9 +808,10 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
-  _keyValue: {fileID: 11400000, guid: 1755e47e91de8724194b34bfa3704967, type: 2}
-  _valueCountForAnyKey: 9
-  _event:
+  _givenKeyValue: {fileID: 11400000, guid: 1755e47e91de8724194b34bfa3704967, type: 2}
+  _whenAnyValue: 5
+  _thanBaseValue: 11
+  _then_InvokeEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: 1fb46661b7f91b547875e51d91b86a7e, type: 2}

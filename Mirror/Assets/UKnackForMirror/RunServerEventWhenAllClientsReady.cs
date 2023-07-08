@@ -8,7 +8,7 @@ using UKnack.Events;
 using UnityEngine;
 using UnityEngine.Events;
 
-public sealed class RunEventWhenAllClientsReady : RunWhenAllClientsReadyAbstract
+public sealed class RunServerEventWhenAllClientsReady : RunWhenAllClientsReadyAbstract
 {
     [SerializeField]
     [ValidReference]
