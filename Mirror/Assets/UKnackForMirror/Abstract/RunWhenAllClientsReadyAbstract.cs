@@ -39,7 +39,7 @@ public abstract class RunWhenAllClientsReadyAbstract : ClientServerCommandAbstra
             //Debug.Log($"still no exception {_clientsReady.Count}");
             if (_clientsReady.All(pair => pair.Value == true) )
             {
-                Debug.Log($"{_clientsReady.Count} all are true");
+                //Debug.Log($"{_clientsReady.Count} all are true");
 
                 foreach (var pair in _clientsReady.ToArray()) //baby error
                 {
