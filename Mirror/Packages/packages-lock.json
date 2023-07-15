@@ -5,7 +5,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "f76b0286f5b21c6f9a86e02dabf67458a09754eb"
+      "hash": "81e6ae5fe5368bc25088a6e6d34bc509e97377c6"
     },
     "com.atomknack.uknackbasis": {
       "version": "https://github.com/atomknack/UKnackBasis.git#upm",
