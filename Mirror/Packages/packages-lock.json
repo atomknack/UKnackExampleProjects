@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.atomknack.mirrortemppackage": {
+      "version": "https://github.com/atomknack/MirrorTempPackageUKnackEditon.git?path=/Packages/com.atomknack.mirrortemppackage",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "f76b0286f5b21c6f9a86e02dabf67458a09754eb"
+    },
     "com.atomknack.uknackbasis": {
       "version": "https://github.com/atomknack/UKnackBasis.git#upm",
       "depth": 0,

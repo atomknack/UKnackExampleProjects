@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.atomknack.mirrortemppackage": "https://github.com/atomknack/MirrorTempPackageUKnackEditon.git?path=/Packages/com.atomknack.mirrortemppackage",
     "com.atomknack.uknackbasis": "https://github.com/atomknack/UKnackBasis.git#upm",
     "com.atomknack.uknackforcinemachine": "https://github.com/atomknack/UKnackExampleProjects.git?path=/Cinemachine/Packages/com.atomknack.uknackforcinemachine",
     "com.unity.ai.navigation": "1.1.3",
