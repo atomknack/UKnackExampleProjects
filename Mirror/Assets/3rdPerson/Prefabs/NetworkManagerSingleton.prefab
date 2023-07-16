@@ -179,7 +179,7 @@ MonoBehaviour:
     deliveryTimeEmaDuration: 2
   connectionQualityInterval: 3
   timeInterpolationGui: 0
-  _rightBeforeServerStop:
+  _rightBeforeClientStop:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 507222060551908517}

@@ -14,12 +14,12 @@ public static class NetworkManagerCallbacks
 public class NetworkManagerWithCallbacks : NetworkManager
 {
     [SerializeField]
-    private UnityEvent _rightBeforeServerStop;
+    private UnityEvent _rightBeforeClientStop;
 
-    public override void OnStopServer()
+    public override void OnStopClient()
     {
-        _rightBeforeServerStop?.Invoke();
-        base.OnStopServer();
+        _rightBeforeClientStop?.Invoke();
+        base.OnStopClient();
     }
 
 
