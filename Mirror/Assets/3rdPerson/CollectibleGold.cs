@@ -43,6 +43,9 @@ public class CollectibleGold : MonoBehaviour
         float time = 0;
         while (time < 1 || audioSource.isPlaying )
         {
+            if (transform == null)
+                yield break;
+
             float delta = Time.deltaTime;
             time += delta;
 

@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public static class NetworkManagerCallbacks
 {
@@ -12,6 +13,14 @@ public static class NetworkManagerCallbacks
 
 public class NetworkManagerWithCallbacks : NetworkManager
 {
+    [SerializeField]
+    private UnityEvent _rightBeforeServerStop;
+
+    public override void OnStopServer()
+    {
+        _rightBeforeServerStop?.Invoke();
+        base.OnStopServer();
+    }
 
 
     /// <summary>Called on the server when a new client connects.</summary>

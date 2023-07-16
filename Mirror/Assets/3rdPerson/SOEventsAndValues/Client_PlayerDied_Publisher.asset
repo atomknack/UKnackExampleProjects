@@ -9,12 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5db0502968cee949a06f97528697b10, type: 3}
-  m_Name: PlayerDied
+  m_Script: {fileID: 11500000, guid: e89078945aaf9564da67ac873da00ff3, type: 3}
+  m_Name: Client_PlayerDied_Publisher
   m_EditorClassIdentifier: 
-  _beforeSubscribers:
-    m_PersistentCalls:
-      m_Calls: []
-  _afterSubscribers:
-    m_PersistentCalls:
-      m_Calls: []
+  where: {fileID: 11400000, guid: 59ba5a8e99e562049b0b668543babab1, type: 2}

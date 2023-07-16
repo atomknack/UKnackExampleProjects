@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e89078945aaf9564da67ac873da00ff3, type: 3}
-  m_Name: ClientStartNewGame_Publisher
+  m_Name: Client_StartNewGame_Publisher
   m_EditorClassIdentifier: 
   where: {fileID: 11400000, guid: 1ae17bd6de5fc624d9ad7638ee8814e7, type: 2}
