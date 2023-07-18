@@ -14,12 +14,15 @@ public static class NetworkManagerCallbacks
 public class NetworkManagerWithCallbacks : NetworkManager
 {
     [SerializeField]
-    private UnityEvent _rightBeforeClientStop;
+    private UnityEvent _onClientStopIfThereIsOfflineScene;
 
     public override void OnStopClient()
     {
-        _rightBeforeClientStop?.Invoke();
         base.OnStopClient();
+        if (string.IsNullOrWhiteSpace(offlineScene))
+            return;
+
+        _onClientStopIfThereIsOfflineScene?.Invoke();
     }
 
 

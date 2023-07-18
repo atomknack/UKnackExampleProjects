@@ -90,6 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 406f3c40caba919418dbb72ee9cfd1cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toBeDestroyed: {fileID: 0}
 --- !u!1 &7799686079430701189
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,7 +183,7 @@ MonoBehaviour:
     deliveryTimeEmaDuration: 2
   connectionQualityInterval: 3
   timeInterpolationGui: 0
-  _rightBeforeClientStop:
+  _onClientStopIfThereIsOfflineScene:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 507222060551908517}
