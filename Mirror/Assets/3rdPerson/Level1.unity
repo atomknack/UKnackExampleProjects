@@ -131,6 +131,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2785789158278860058, guid: d4b5d8ec5109d4c4a893b790ec5bb599, type: 3}
+      propertyPath: offlineScene
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6885704618393026911, guid: d4b5d8ec5109d4c4a893b790ec5bb599, type: 3}
       propertyPath: m_RootOrder
       value: 12
