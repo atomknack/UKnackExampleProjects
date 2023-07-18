@@ -5,7 +5,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "09f5d14245724ab785084f37485f138a26cf2190"
+      "hash": "e1c46c396a92ed06fe3ee135b728ae61ac5df05d"
     },
     "com.atomknack.uknackbasis": {
       "version": "https://github.com/atomknack/UKnackBasis.git#upm",
@@ -14,7 +14,7 @@
       "dependencies": {
         "com.unity.inputsystem": "1.5.1"
       },
-      "hash": "4d6a51db1ecb2fb86da79abbb224458df9c298dd"
+      "hash": "0e95ff96c50cbd538889e8168b3afdde23a0f72f"
     },
     "com.atomknack.uknackforcinemachine": {
       "version": "https://github.com/atomknack/UKnackExampleProjects.git?path=/Cinemachine/Packages/com.atomknack.uknackforcinemachine",

@@ -87,10 +87,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7622797572735965795}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 406f3c40caba919418dbb72ee9cfd1cd, type: 3}
+  m_Script: {fileID: 11500000, guid: f7a769b835f5c90498a3b44b483dafdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toBeDestroyed: {fileID: 0}
+  _toBeDestroyed: {fileID: 0}
 --- !u!1 &7799686079430701189
 GameObject:
   m_ObjectHideFlags: 0
