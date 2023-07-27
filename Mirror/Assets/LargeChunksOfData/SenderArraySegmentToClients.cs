@@ -9,7 +9,7 @@ public class SenderArraySegmentToClients : NetworkBehaviour
 {
     private byte[] _data = new byte[100_000_000];
     private uint _dataCount = 0;
-
+    private int _maxArraySegmentSize = 100;
 
     protected Dictionary<int, uint> _clientsConfirmedRecievedDataCount = new Dictionary<int, uint>();
 
@@ -32,20 +32,19 @@ public class SenderArraySegmentToClients : NetworkBehaviour
             SendMoreDataForClient(sender, clientDataCount);
     }
 
-    private void SendMoreDataForClient(NetworkConnectionToClient sender, uint clientDataCount)
+    private void SendMoreDataForClient(NetworkConnectionToClient client, uint clientDataCount)
     {
         uint needToSendUnchunked = _dataCount - clientDataCount;
         if (needToSendUnchunked == 0)
         {
-            throw new System.Exception($"Why this method was called for {sender.connectionId}, data difference is 0");
+            throw new System.Exception($"Why this method was called for {client.connectionId}, data difference is 0");
             //return;
         }
 
         if (needToSendUnchunked < 0)
-            throw new System.Exception($"for client: {sender.connectionId} there is negative number of data that need to be sent: {needToSendUnchunked}, this should never happen");
-
-
-
+            throw new System.Exception($"for client: {client.connectionId} there is negative number of data that need to be sent: {needToSendUnchunked}, this should never happen");
+        //NetworkServer.
+        //client.
         throw new NotImplementedException();
     }
 
@@ -91,8 +90,14 @@ public class SenderArraySegmentToClients : NetworkBehaviour
         NetworkManagerCallbacks.OnServerWhenClientConnect += OnServerWhenClientConnect;
         NetworkManagerCallbacks.OnServerWhenClientDisconnect += OnServerWhenClientDisconnect;
         
-        
+        _maxArraySegmentSize = GetMaxArraySegmentSize();
         //_serverRunning = true;
+    }
+
+    public override void OnStartClient()
+    {
+        if (isServer == false)
+            _maxArraySegmentSize = GetMaxArraySegmentSize();
     }
 
     public override void OnStopServer()
@@ -105,7 +110,9 @@ public class SenderArraySegmentToClients : NetworkBehaviour
         
         //_serverRunning = false;
     }
-
+    private int GetMaxArraySegmentSize() =>
+        Math.Max(100, NetworkManager.singleton.transport.GetMaxPacketSize() - 64);
+    
     private bool IsConnectionFromHost(NetworkConnectionToClient conn)
     {
         if (conn == null)
