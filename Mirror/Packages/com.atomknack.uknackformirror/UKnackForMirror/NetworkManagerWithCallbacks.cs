@@ -5,39 +5,42 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public static class NetworkManagerCallbacks
+namespace UKnack.Mirror
 {
-    public static Action<NetworkConnectionToClient> OnServerWhenClientConnect;
-    public static Action<NetworkConnectionToClient> OnServerWhenClientDisconnect;
-}
-
-public class NetworkManagerWithCallbacks : NetworkManager
-{
-    [SerializeField]
-    private UnityEvent _onClientStopIfThereIsOfflineScene;
-
-    public override void OnStopClient()
+    public static class NetworkManagerCallbacks
     {
-        base.OnStopClient();
-        if (string.IsNullOrWhiteSpace(offlineScene))
-            return;
-
-        _onClientStopIfThereIsOfflineScene?.Invoke();
+        public static Action<NetworkConnectionToClient> OnServerWhenClientConnect;
+        public static Action<NetworkConnectionToClient> OnServerWhenClientDisconnect;
     }
 
-
-    /// <summary>Called on the server when a new client connects.</summary>
-    public override void OnServerConnect(NetworkConnectionToClient conn) 
+    public class NetworkManagerWithCallbacks : NetworkManager
     {
-        base.OnServerDisconnect(conn);
-        NetworkManagerCallbacks.OnServerWhenClientConnect?.Invoke(conn);
-    }
+        [SerializeField]
+        private UnityEvent _onClientStopIfThereIsOfflineScene;
 
-    /// <summary>Called on the server when a client disconnects.</summary>
-    // Called by NetworkServer.OnTransportDisconnect!
-    public override void OnServerDisconnect(NetworkConnectionToClient conn)
-    {
-        base.OnServerDisconnect(conn);
-        NetworkManagerCallbacks.OnServerWhenClientDisconnect?.Invoke(conn);
+        public override void OnStopClient()
+        {
+            base.OnStopClient();
+            if (string.IsNullOrWhiteSpace(offlineScene))
+                return;
+
+            _onClientStopIfThereIsOfflineScene?.Invoke();
+        }
+
+
+        /// <summary>Called on the server when a new client connects.</summary>
+        public override void OnServerConnect(NetworkConnectionToClient conn)
+        {
+            base.OnServerDisconnect(conn);
+            NetworkManagerCallbacks.OnServerWhenClientConnect?.Invoke(conn);
+        }
+
+        /// <summary>Called on the server when a client disconnects.</summary>
+        // Called by NetworkServer.OnTransportDisconnect!
+        public override void OnServerDisconnect(NetworkConnectionToClient conn)
+        {
+            base.OnServerDisconnect(conn);
+            NetworkManagerCallbacks.OnServerWhenClientDisconnect?.Invoke(conn);
+        }
     }
 }
