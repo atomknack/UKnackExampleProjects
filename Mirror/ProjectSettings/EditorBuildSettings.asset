@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/LargeChunksOfData/ServerSendLargeChunksOfData.unity
+    guid: 1446e3bfe23b4dc4593b35d6fdbb146a
+  - enabled: 1
     path: Assets/3rdPerson/Level2.unity
     guid: 29fab2e1389f6b0488b5e39fada38881
   - enabled: 1
