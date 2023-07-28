@@ -138,7 +138,20 @@ public class SenderArraySegmentToClients : NetworkBehaviour
             _dataCount = 0;
             CmdClientRecievedTotal(_dataCount);
         }
+    }
 
+    public override void OnStopClient()
+    {
+        for (int i=0; i< _dataCount; ++i)
+        {
+            if (_data[i] != (byte)i)
+            {
+                string message = $"at {i} of {_dataCount}, {_data[i]} not equal to {(byte)i}";
+                Debug.LogError("logged Error:" + message);
+                throw new Exception(message);
+            }
+        }
+        Debug.Log($"Checked {_dataCount}");
     }
 
     public override void OnStopServer()
