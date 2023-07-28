@@ -134,7 +134,11 @@ public class SenderArraySegmentToClients : NetworkBehaviour
         if (isServer == false)
             _maxArraySegmentSize = GetMaxArraySegmentSize();
         if (isServer == false)
+        {
+            _dataCount = 0;
             CmdClientRecievedTotal(_dataCount);
+        }
+
     }
 
     public override void OnStopServer()
