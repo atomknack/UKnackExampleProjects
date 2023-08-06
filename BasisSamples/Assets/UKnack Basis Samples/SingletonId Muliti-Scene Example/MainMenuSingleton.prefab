@@ -87,9 +87,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5605783214243978170}
   - component: {fileID: 5605783214243978171}
-  - component: {fileID: 1229707898121194056}
-  - component: {fileID: 4253888386467518226}
-  - component: {fileID: 1904851354709257977}
+  - component: {fileID: 4250011076422025801}
+  - component: {fileID: 3310225521321267791}
+  - component: {fileID: 2084751302706014042}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: 905d65cff1e641e41bfe0c6cc753495b, type: 3}
   m_SortingOrder: 0
---- !u!114 &1229707898121194056
+--- !u!114 &4250011076422025801
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,13 +137,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 5605783214243978168}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 229645d7e02338c4f843d3db3a3bed67, type: 3}
+  m_Script: {fileID: 11500000, guid: d736d5bba706e8e44bd3ff8fb04ac861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _document: {fileID: 0}
   _buttonName: Level1
-  _sceneName: Level1NamedSceneExample
---- !u!114 &4253888386467518226
+  _buttonClickEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: f0b29b17fb18ef14a974d1c61eed59dc, type: 2}
+        m_TargetAssemblyTypeName: UKnack.Concrete.Commands.ScriptableObjects.LoadSceneSingleSyncCommand,
+          UKnackBasisConcrete
+        m_MethodName: Execute
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Level1NamedSceneExample
+          m_BoolArgument: 0
+        m_CallState: 1
+--- !u!114 &3310225521321267791
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -152,13 +167,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 5605783214243978168}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 229645d7e02338c4f843d3db3a3bed67, type: 3}
+  m_Script: {fileID: 11500000, guid: d736d5bba706e8e44bd3ff8fb04ac861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _document: {fileID: 0}
   _buttonName: Level2
-  _sceneName: Level2NamedSceneExampleHaveMainMenuSingleton
---- !u!114 &1904851354709257977
+  _buttonClickEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: f0b29b17fb18ef14a974d1c61eed59dc, type: 2}
+        m_TargetAssemblyTypeName: UKnack.Concrete.Commands.ScriptableObjects.LoadSceneSingleSyncCommand,
+          UKnackBasisConcrete
+        m_MethodName: Execute
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Level2NamedSceneExampleHaveMainMenuSingleton
+          m_BoolArgument: 0
+        m_CallState: 1
+--- !u!114 &2084751302706014042
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -167,9 +197,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 5605783214243978168}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 229645d7e02338c4f843d3db3a3bed67, type: 3}
+  m_Script: {fileID: 11500000, guid: d736d5bba706e8e44bd3ff8fb04ac861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _document: {fileID: 0}
   _buttonName: Level3
-  _sceneName: Level3NamedSceneExampleCustomDebugMenu
+  _buttonClickEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: f0b29b17fb18ef14a974d1c61eed59dc, type: 2}
+        m_TargetAssemblyTypeName: UKnack.Concrete.Commands.ScriptableObjects.LoadSceneSingleSyncCommand,
+          UKnackBasisConcrete
+        m_MethodName: Execute
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Level3NamedSceneExampleCustomDebugMenu
+          m_BoolArgument: 0
+        m_CallState: 1

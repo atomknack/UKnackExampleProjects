@@ -154,12 +154,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   notNullWithInterfacePicker: {fileID: 0}
   notNull: {fileID: 0}
-  interfaceOnObject: {fileID: 0}
+  interfaceOnObject: {fileID: 421381845}
   behaviourOnObject: {fileID: 0}
   shouldHaveChild: {fileID: 0}
   manyPickersForObjectThatHaveChild: {fileID: 0}
   manyPickersForNotNull: {fileID: 0}
-  shorty: {fileID: 0}
+  shorty: {fileID: 706628292}
 --- !u!4 &176625554
 Transform:
   m_ObjectHideFlags: 0
@@ -1806,10 +1806,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   notNullWithInterfacePicker: {fileID: 0}
   notNull: {fileID: 0}
-  interfaceOnObject: {fileID: 0}
+  interfaceOnObject: {fileID: 1578650237}
   behaviourOnObject: {fileID: 0}
   shouldHaveChild: {fileID: 0}
-  manyPickersForObjectThatHaveChild: {fileID: 0}
+  manyPickersForObjectThatHaveChild: {fileID: 421381845}
   manyPickersForNotNull: {fileID: 0}
   shorty: {fileID: 0}
 --- !u!4 &1578650238
