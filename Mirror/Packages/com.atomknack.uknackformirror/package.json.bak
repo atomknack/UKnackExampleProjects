@@ -1,0 +1,20 @@
+{
+  "name": "com.atomknack.uknackformirror",
+  "version": "0.0.1",
+  "displayName": "UKnack for Mirror temporary package",
+  "description": "UKnack for Mirror temporary package",
+  "unity": "2022.3",
+  "unityRelease": "0f1",
+  "documentationUrl": "https://github.com/atomknack/UKnackExampleProjects",
+  "licensesUrl": "https://github.com/atomknack/UKnackExampleProjects/blob/main/LICENSE",
+  "license": "MIT",
+    "dependencies": {
+    "com.atomknack.mirrortemppackage": "79.1.4"
+  },
+  "author": {
+    "name": "atomknack",
+    "email": "atomknack@gmail.com",
+    "url": "atomknack.com"
+  },
+  "scopedRegistries": []
+}
