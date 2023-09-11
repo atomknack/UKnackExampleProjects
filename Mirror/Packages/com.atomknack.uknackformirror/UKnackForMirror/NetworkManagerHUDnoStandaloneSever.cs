@@ -130,10 +130,12 @@ namespace Mirror
                 {
                     manager.StopHost();
                 }
+                /*
                 if (GUILayout.Button("Stop Client"))
                 {
                     manager.StopClient();
                 }
+                */
                 GUILayout.EndHorizontal();
             }
             // stop client if client-only
