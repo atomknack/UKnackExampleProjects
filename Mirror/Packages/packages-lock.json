@@ -1,31 +1,28 @@
 {
   "dependencies": {
     "com.atomknack.mirrortemppackage": {
-      "version": "https://github.com/atomknack/MirrorTempPackageUKnackEditon.git?path=/Packages/com.atomknack.mirrortemppackage",
+      "version": "file:C:/GitHub/MirrorTempPackageUKnackEditon/Packages/com.atomknack.mirrortemppackage",
       "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "e1c46c396a92ed06fe3ee135b728ae61ac5df05d"
+      "source": "local",
+      "dependencies": {}
     },
     "com.atomknack.uknackbasis": {
-      "version": "https://github.com/atomknack/UKnackBasis.git#upm",
+      "version": "file:C:/GitHub/UKnackBasis/Packages/com.atomknack.uknackbasis",
       "depth": 0,
-      "source": "git",
+      "source": "local",
       "dependencies": {
         "com.unity.inputsystem": "1.5.1"
-      },
-      "hash": "877c25807a8066a6f0260f7c6d26943208b27b35"
+      }
     },
     "com.atomknack.uknackforcinemachine": {
-      "version": "https://github.com/atomknack/UKnackExampleProjects.git?path=/Cinemachine/Packages/com.atomknack.uknackforcinemachine",
+      "version": "file:C:/GitHub/UKnackExampleProjects/Cinemachine/Packages/com.atomknack.uknackforcinemachine",
       "depth": 0,
-      "source": "git",
+      "source": "local",
       "dependencies": {
         "com.unity.inputsystem": "1.5.1",
         "com.unity.cinemachine": "2.7.1",
         "com.atomknack.uknackbasis": "2.0.0"
-      },
-      "hash": "d1c020f9d3edfd3938fb65da10cdf156005085d0"
+      }
     },
     "com.atomknack.uknackformirror": {
       "version": "file:com.atomknack.uknackformirror",
@@ -36,7 +33,7 @@
       }
     },
     "com.unity.ai.navigation": {
-      "version": "1.1.3",
+      "version": "1.1.4",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -54,7 +51,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.collab-proxy": {
-      "version": "2.0.4",
+      "version": "2.0.7",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
@@ -80,16 +77,16 @@
       "source": "builtin",
       "dependencies": {
         "com.unity.ide.visualstudio": "2.0.18",
-        "com.unity.ide.rider": "3.0.21",
+        "com.unity.ide.rider": "3.0.24",
         "com.unity.ide.vscode": "1.2.5",
         "com.unity.editorcoroutines": "1.0.0",
         "com.unity.performance.profile-analyzer": "1.2.2",
         "com.unity.test-framework": "1.1.33",
-        "com.unity.testtools.codecoverage": "1.2.3"
+        "com.unity.testtools.codecoverage": "1.2.4"
       }
     },
     "com.unity.ide.rider": {
-      "version": "3.0.21",
+      "version": "3.0.24",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -114,7 +111,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.inputsystem": {
-      "version": "1.5.1",
+      "version": "1.6.3",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -136,6 +133,22 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+    "com.unity.sysroot": {
+      "version": "2.0.7",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.sysroot.linux-x86_64": {
+      "version": "2.0.6",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.sysroot": "2.0.7"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.test-framework": {
       "version": "1.1.33",
       "depth": 0,
@@ -148,7 +161,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.testtools.codecoverage": {
-      "version": "1.2.3",
+      "version": "1.2.4",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -167,7 +180,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.timeline": {
-      "version": "1.7.4",
+      "version": "1.7.5",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -175,6 +188,16 @@
         "com.unity.modules.animation": "1.0.0",
         "com.unity.modules.audio": "1.0.0",
         "com.unity.modules.particlesystem": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.toolchain.win-x86_64-linux-x86_64": {
+      "version": "2.0.6",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.sysroot": "2.0.7",
+        "com.unity.sysroot.linux-x86_64": "2.0.6"
       },
       "url": "https://packages.unity.com"
     },
@@ -188,7 +211,7 @@
       }
     },
     "com.unity.visualscripting": {
-      "version": "1.8.0",
+      "version": "1.9.0",
       "depth": 0,
       "source": "registry",
       "dependencies": {

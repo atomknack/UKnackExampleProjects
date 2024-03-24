@@ -19,6 +19,13 @@ namespace UKnack.Concrete.Events
         public Vector2 gamepadScale = Vector2.one;
 
         [SerializeField]
+        private bool _gamepadContinuouslyPublisWhilePressed = false;
+
+        private bool _pressed = false;
+
+        private Vector2 _value = Vector2.zero;
+
+        [SerializeField]
         [ValidReference(typeof(IPublisher<Vector2>), nameof(IPublisher<Vector2>.Validate), typeof(IPublisher<Vector2>))]
         [DisableEditingInPlaymode]
         private UnityEngine.Object _iPublisher;
@@ -29,9 +36,22 @@ namespace UKnack.Concrete.Events
         {
             Vector2 value = context.ReadValue<Vector2>();
 
-            value = Scale(value, ref context);
+            _value = Scale(value, ref context);
 
-            _iPublisherAsInterface.Publish(value);
+            var currentDevice = context.control.device;
+
+            // dirty
+            if (_gamepadContinuouslyPublisWhilePressed && currentDevice == Gamepad.current)
+            {
+                var phase = context.phase;
+                if (phase == InputActionPhase.Performed)
+                    _pressed = true;
+                if (phase == InputActionPhase.Disabled || phase == InputActionPhase.Canceled)
+                    _pressed = false;
+                return;
+            } // end of dirty
+
+            _iPublisherAsInterface.Publish(_value);
 
             Vector2 Scale(Vector2 value, ref CallbackContext context)
             {
@@ -39,10 +59,18 @@ namespace UKnack.Concrete.Events
                 if (currentDevice == Mouse.current || currentDevice == Touchscreen.current || currentDevice == Pointer.current)
                     return value * pointerScale;
 
-                if (currentDevice == Gamepad.current) 
+                if (currentDevice == Gamepad.current)
                     return value * gamepadScale;
 
                 return value;
+            }
+        }
+
+        private void Update()
+        {
+            if (_pressed)
+            {
+                _iPublisherAsInterface.Publish(_value*Time.deltaTime);
             }
         }
 

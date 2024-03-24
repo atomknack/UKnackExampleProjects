@@ -1,6 +1,6 @@
 {
   "name": "com.atomknack.uknackforcinemachine",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "displayName": "UKnack for Cinemachine",
   "description": "Set of scripts that bind UKnack and Cinemachine. \n\nGit url: \nhttps://github.com/atomknack/UKnackExampleProjects.git?path=/Cinemachine/Packages/com.atomknack.uknackforcinemachine",
   "unity": "2022.2",
